@@ -45,14 +45,11 @@
   const borrar = ()=>{
     valorNumerico.value = ''
   }
-
+  const borrarTodo =()=>{
+    valorNumerico.value=''
+    historial.value=[]
+  }
   var historial = ref([
-    {
-      num1 : 1,
-      num2:2,
-      operacion:'+',
-      resultado:3
-    },
     
   ])
   
@@ -63,7 +60,7 @@
     <div for="contenedor-general" class="bg-slate-300 h-60 justify-center mt-24 py-4 mx-auto w-1/4 rounded-md">
     <input type="text" class="h-10 w-72 mx-6 rounded-md" v-model="valorNumerico">
     <div for="caja-de-botones" class="mx-6 my-2 flex">
-      <div for="caja-de-numeros">
+      <div for="caja-de-numeros" class="w-40">
         <button @click="agregarNumero('7')" class="bg-slate-400 py-3 px-3 hover:bg-slate-500">
         7
       </button>
@@ -109,6 +106,9 @@
       </button>
       <button @click="borrar()"  class="bg-slate-400 py-3 px-3 hover:bg-slate-500">
         C
+      </button>
+      <button @click="borrarTodo()"  class="bg-slate-400 py-3 px-3 hover:bg-slate-500">
+        CE
       </button>
       
 
